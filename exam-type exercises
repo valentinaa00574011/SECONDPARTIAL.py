@@ -1,0 +1,79 @@
+"""
+1.Multiple Discounts Purchase. 
+
+#code1 of 7
+print("welcome to the Multiple Discounts Progam!! You will have 3 categories avaliable: A, B and C")
+print("if you buy less than 5 units, you get the category C: a 2% discount")
+print(",if you buy 5 units, you'll get a 5% discount. And if you buy more than 5 units, the 10% discount will be yours!")
+"""
+
+product_price = float(input("here, you should enter the price of the product"))
+category = int(input("enter the quantity of bought items, in whole numbers, please"))
+
+def price1():
+  return product_price - (product_price*0.05)
+
+def price2():
+    return product_price - (product_price*0.02)
+
+def price3():
+    return product_price -(product_price*0.1)
+
+def exception(): #if a person buys more than 10 items
+    return product_price - (product_price*0.15) 
+  
+if category == 5:
+    print(f"the price with the discount should be {price1()}!")
+elif category < 5:
+    print(f"the price with your 2% discount should be {price2()}!!")
+elif 5 < category < 10:
+    print(f"your price with the 10% discount should be {price3()}!!!")
+elif category >=10:
+    print(f"your final price is a discount of 10% plus another 5%: {exception()}")
+else:
+  print("not a valid input!! please put it in numbers :)")
+
+
+
+"""
+4.Unit Conversion. 
+p2_unit_conversion.py 
+Create a program that allows the user to convert between different units of measurement, such as miles to kilometers, liters to gallons, or Fahrenheit to Celsius. The program should prompt the user for the quantity and unit of origin and the unit of destination, then perform the conversion.
+"""
+
+print("hello!! 'tis i, a bot that can calculate miles to km, liters to gallons, and celsius to farenheit!! the salvation to americans, i believe.")
+how_many = float(input("insert here the quantity of whatever you wish to measure, my liege"))
+from_x = input("insert here the original unit (either farenheit, miles or liters)!!").lower()
+to_y = input("insert here the unit you want your stuff converted to!! (either celsius, km, or gallons) :D").lower()
+
+def miles_km(miles):
+  return miles * 1.6
+def liters_gallons(liters):
+  return liters*0.26
+def farenheit_celsius(farenheit):
+  farenheit = float(farenheit)
+  return (farenheit-32)* 5/9
+
+conversion_names = {
+  ("farenheit","celsius"): farenheit_celsius,
+  ("miles","km"): miles_km,
+  ("liters","gallons"): liters_gallons,
+}
+
+def conversion(how_many, from_x, to_y):
+  if from_x == "miles" and to_y == "km":
+    return miles_km(how_many)
+  elif from_x == "liters" and to_y == "gallons":
+    return liters_gallons(how_many)
+  elif from_x == "farenheit" and to_y == "celsius":
+    return farenheit_celsius(how_many)
+  else:
+    return "boy this isn't something on the menu"
+
+result = conversion(how_many, from_x, to_y)
+print(f"the result is:{result}")
+
+#i am so tired i don't think i can stand doing other 2 codes anymore 
+#i spent 3 hours working on these 2 codes i am so sorry for disappointing you 
+#i am very very sorry, really
+#sincerely, val
