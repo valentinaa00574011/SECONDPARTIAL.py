@@ -1,0 +1,25 @@
+print("hello! i am a bot that calculates your discount for online purchases")
+
+
+def discounted_total(purchase, discount):
+  total = purchase -(purchase*discount/100)
+  return total
+
+def membership_card():
+  membership = (purchase-(purchase*discount/100)) - (purchase*0.05)
+  return membership
+  
+discount = float(input("you recceived a card that discounted items bought for over 100$, how mucha was the discount in percentage? don't use the % symbol, just numbers :)"))
+
+purchase = int(input("could you tell me how much you spent on this purchase?"))
+if purchase <= 100:
+  print(f"your purchase was 100$ or less, you can apply your {discount} discount on it, yay!")
+  print(f"so your discounted total would be {discounted_total(purchase, discount)}")
+  question = str(input("do you have a membership card? you can get a 5% discount on your purchase with it :D answer 'yes' or 'no'"))
+  if question == "yes":
+    print(f"your current item price is {membership_card()}, since you got the first discount of {discount} and the 5% discount of the membership card :))")
+  else:
+    print("i would recommend getting one, truly")
+  
+else:
+  print("your discount doesn't apply for this item :(")
