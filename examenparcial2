@@ -1,0 +1,35 @@
+replit link:
+https://replit.com/join/oglokzhefr-valentinamuno13
+
+#healthy diet
+print("hello!! i am a bot designed to help you follow a healthy diet :)")
+
+age = float(input("enter your age. in numbers, please"))
+height = float(input("please enter your height, in METERS, with points after the 1 -> example: 165 cm = 1.65"))
+weight = float(input("please enter your weight in kilos."))
+physical_activity = str(input("last question: is your physical activity level sedentary, moderate or active? please respond using these words only."))
+
+#bmi
+bmi = float(weight)%(float(height)*float(height))
+
+#criteria1
+if age <= 18:
+  print("we recommend a high carbohydrate diet, you are still growing :)")
+elif age > 18 and (age <= 35):
+  print("we recommend a high protein and low carbohydrate diet")
+else:
+  print("we recommend a low sugar diet")
+
+#criteria2
+if (age >= 18 and (age <= 30)) and physical_activity == "sedentary" or (physical_activity == "moderate"):
+  print("it seems like you need some aerobic exercises, you'll be good in no time :)")
+
+#criteria3
+if bmi < 18 and (physical_activity == "sedentary"):
+  print("regarding your bmi, you need to talk to a nutriologist and increase your physical activity")
+elif bmi > 18 and (bmi < 25) and (physical_activity == "moderate" or (physical_activity == "active")):
+  print("you are in good condition!!")
+elif bmi > 25 and (physical_activity == "sedentary"):
+  print("you'll need to consult a nutrition professional, increase your physical activity and reduce your weight a bit, you're on the right track :D")
+else: 
+  print("it seems like your bmi was either under 18 without you being sedentary or over 25 without you being sedentary, so our system can't  get a recommendation for you")
